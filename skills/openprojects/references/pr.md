@@ -12,9 +12,9 @@ Read this before you push a branch or handle anything about a pull request.
    - End with a short "How" paragraph.
    - Keep tracking labels out of the opening section.
 4. Assign the PR to the member who asked and request their review, when you know their GitHub login from memory or the ask.
-5. Record the PR's URL in your thread file and report to the coordinator that the draft is up, with the link.
+5. Record the PR's URL in your thread file and reply in your chat that the draft is up, with the link.
 
-Then drive it to green. Report again only when it is ready for a human. Those are the only two reports a PR gets; rebases, CI re-runs and review-nit fixes go in your Notes.
+Then drive it to green. Reply again only when it is ready for a human. Those are the only two replies a PR gets. Rebases, CI re-runs and review-nit fixes go in your plan and Notes.
 
 When the PR for your branch has already been merged, follow-up work is a fresh change. Fetch the default branch and run `git checkout -B <branch> origin/<default-branch>`, rebasing on top any of your commits that were never merged. Push (a force-with-lease push is fine when the branch held only merged history) and open a new PR. Never stack new commits on merged history.
 
@@ -26,7 +26,7 @@ When the PR for your branch has already been merged, follow-up work is a fresh c
   2. Something ambiguous or architecturally significant: ask the member, with enough context to answer without scrolling back.
   3. A duplicate, or nothing to do: skip it silently.
 
-  On a watched PR, a note about standing down goes to the member through your report, never as a comment on their PR.
+  On a watched PR, a note about standing down goes to the member in your chat, never as a comment on their PR.
 
 ## On every event
 
@@ -41,7 +41,7 @@ When the PR for your branch has already been merged, follow-up work is a fresh c
 2. Check whether the same check also fails on the base branch, from the base's latest checks or a local run on the base.
 3. When your diff caused it, fix it, prove the fix (see "Before every push") and push. On each new failure, diagnose again and push again until CI is green. One round is not the task.
 4. When it fails on the base branch too, it is the one legitimate "not mine". If a fix exists upstream or is small, port it. Comment once on the PR saying what fails, that it also fails on the base, and what you did. Then handle "Base branch recovered" when the base turns green.
-5. When the failure is real but outside what the member asked for, comment on the PR saying exactly what fails and why you are not fixing it, and report it to the coordinator as a blocker.
+5. When the failure is real but outside what the member asked for, comment on the PR saying exactly what fails and why you are not fixing it, and reply in your chat with the blocker.
 6. When a failure is unrelated to your diff and passes on the base, re-run the failed job once through the CI system's own re-run. If it fails again, treat it as real.
 
 A red-CI check on your own PR never ends without either a pushed fix or a comment from step 4 or 5.
@@ -64,7 +64,7 @@ On a branch someone else owns, never rewrite history. Merge the base in only whe
 
 - Address every comment on your own PR, either by changing the code or by replying on that comment's thread to explain why not.
 - Answer a reviewer's question on its thread.
-- When a suggestion asks for more than the PR's scope, reply proposing a follow-up and tell the coordinator. Do not grow the PR unasked.
+- When a suggestion asks for more than the PR's scope, reply proposing a follow-up and tell the member in your chat. Do not grow the PR unasked.
 - When reviewers disagree with each other, ask the member.
 - Push fixes from one review together. Resolve a review thread after a pushed commit fixes it, where the repository lets authors resolve.
 
@@ -76,7 +76,7 @@ On a branch someone else owns, never rewrite history. Merge the base in only whe
 
 ## When a PR is done
 
-A PR is ready for a human when CI is green, no review comment is unaddressed, it is mergeable, and its description matches the diff. Mark it ready for review and report that it is ready. Keep following it until it is merged or closed, then set your thread to `done`. When the member asks you to stop following a PR, stop and push nothing more to it. When the PR checks cannot see some of the PR's state, say so instead of assuming it.
+A PR is ready for a human when CI is green, no review comment is unaddressed, it is mergeable, and its description matches the diff. Mark it ready for review and reply that it is ready. Keep following it until it is merged or closed, then set your thread to `done`. When the member asks you to stop following a PR, stop and push nothing more to it. When the PR checks cannot see some of the PR's state, say so instead of assuming it.
 
 ## Never
 

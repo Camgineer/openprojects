@@ -1,6 +1,6 @@
 # OpenProjects
 
-One skill that turns a chat in the agent app you already use into a project coordinator. You post asks in that chat. The coordinator acknowledges each one, hands it to its own thread agent working on its own branch, keeps shared project memory, and drives pull requests to green.
+One skill that turns a chat in the agent app you already use into a project coordinator. You post asks in that chat. The coordinator acknowledges each one, starts a thread for it in its own chat, worktree and branch, keeps shared project memory, and drives pull requests to green.
 
 ## Install
 
@@ -15,7 +15,7 @@ Open a chat in your repository and invoke the `openprojects` skill. The chat bec
 - `files/` holds shared outputs.
 - `worktrees/` holds each thread's checkout.
 
-Invoke the skill again in a new chat to resume. The new coordinator picks up memory and any running threads.
+Invoke the skill again in a new chat to resume. The new coordinator picks up memory and every thread file.
 
 ## License
 
